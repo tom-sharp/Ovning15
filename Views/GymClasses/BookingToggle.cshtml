@@ -1,0 +1,13 @@
+﻿@model BookingToggleViewModel
+
+@if (@Model.Booked)
+{
+	<p>Booked</p>
+}
+else
+{
+	<p>UnBooked</p>
+}
+
+<a asp-action="Index">Back to List</a>
+

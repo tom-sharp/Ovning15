@@ -1,0 +1,56 @@
+﻿@model UserDetailsViewModel
+<div>
+	<p>User details</p>
+
+	<p>User object</p>
+	<table>
+		<tr>
+			<th>Name</th>
+			<td>@User.Identity.Name</td>
+		</tr>
+		<tr>
+			<th>Authenticated</th>
+			<td>@User.Identity.IsAuthenticated</td>
+		</tr>
+		<tr>
+			<th>AuthenticationType</th>
+			<td>@User.Identity.AuthenticationType</td>
+		</tr>
+	</table>
+	<p><b>User Claims:</b></p>
+	<table>
+		<thead>
+			<tr>
+				<th>Value</th>
+				<th>Type</th>
+				<th>Issuer</th>
+			</tr>
+		</thead>
+		@foreach (var c in User.Claims)
+		{
+			<tr>
+				<td>@c.Value</td>
+				<td>@c.Type</td>
+				<td>@c.Issuer</td>
+			</tr>
+		}
+	</table>
+	<p><b>AppUser (IdentityUser) object:</b></p>
+	<table>
+		<tr><th>@Html.DisplayNameFor(model => model.UserId)</th><td>@Model.UserId</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.UserName)</th><td>@Model.UserName</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.NormalizedUserName)</th><td>@Model.NormalizedUserName</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.PasswordHash)</th><td>@Model.PasswordHash</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.Email)</th><td>@Model.Email</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.NormalizedEmail)</th><td>@Model.NormalizedEmail</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.EmailConfirmed)</th><td>@Model.EmailConfirmed</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.ConcurrencyStamp)</th><td>@Model.ConcurrencyStamp</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.SecurityStamp)</th><td>@Model.SecurityStamp</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.TwoFactorEnabled)</th><td>@Model.TwoFactorEnabled</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.LockoutEnabled)</th><td>@Model.LockoutEnabled</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.LockoutEnd)</th><td>@Model.LockoutEnd</td></tr>
+		<tr><th>@Html.DisplayNameFor(model => model.AccessFailedCount)</th><td>@Model.AccessFailedCount</td></tr>
+	</table>
+
+
+</div>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<UserDetailsViewModel>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>@Html.DisplayNameFor(model => model.Email)</th>
+			<th>@Html.DisplayNameFor(model => model.EmailConfirmed)</th>
+			<th>@Html.DisplayNameFor(model => model.UserName)</th>
+			<th>@Html.DisplayNameFor(model => model.UserId)</th>
+			<th>@Html.DisplayNameFor(model => model.AccessFailedCount)</th>
+			<th>@Html.DisplayNameFor(model => model.LockoutEnd)</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var user in Model)
+		{
+		<tr>
+			<td>@user.Email</td>
+			<td>@user.EmailConfirmed</td>
+			<td>@user.UserName</td>
+			<td>@user.UserId</td>
+			<td>@user.AccessFailedCount</td>
+			<td>@user.LockoutEnd</td>
+		</tr>
+		}
+	</tbody>
+</table>
